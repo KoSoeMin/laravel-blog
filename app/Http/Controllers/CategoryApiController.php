@@ -38,7 +38,7 @@ class CategoryApiController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
         return Category::find($id);
     }
@@ -50,7 +50,7 @@ class CategoryApiController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update($id)
     {
         $category = Category::find($id);
         $category->name = request()->name;
@@ -64,7 +64,7 @@ class CategoryApiController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
          $category = Category::find($id);
          $category->delete();
